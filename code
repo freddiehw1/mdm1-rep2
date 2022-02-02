@@ -13,10 +13,6 @@ def square_pattern():
     sprinklers = no_wide * no_tall
     print(sprinklers , "sprinklers needed when using a square pattern")
         
-
-
-
-
 def hexagonal_pattern():    
     global sprinkler_tally
     global width
