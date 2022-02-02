@@ -1,0 +1,46 @@
+import math
+
+height = 10
+width = 17
+sprinkler_tally = 0
+height_tally = 0
+n = 0
+
+def square_pattern():
+  global sprinklers
+    no_wide = math.ceil(width/math.sqrt(2))
+    no_tall = math.ceil(height/math.sqrt(2))
+    sprinklers = no_wide * no_tall
+    print(sprinklers , "sprinklers needed when using a square pattern")
+        
+
+
+
+
+def hexagonal_pattern():    
+    global sprinkler_tally
+    global width
+    global height_tally
+    global n
+    
+    n +=1
+    
+    if n % 2 == 1:
+        height_tally += 1 
+        no_wide = math.ceil(width/math.sqrt(3))
+   
+    if n % 2 == 0:
+        height_tally += 2
+        no_wide = math.ceil((width + 1)/math.sqrt(3))
+    sprinkler_tally += no_wide
+    
+    if height_tally >= height:
+        print("You need", sprinkler_tally, "sprinklers when using a hexagonal pattern")
+    
+    else:
+        hexagonal_pattern()
+
+square_pattern()
+hexagonal_pattern()        
+        
+    
